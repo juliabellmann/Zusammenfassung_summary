@@ -22,9 +22,9 @@ Bei Fehlern oder Lücken würde ich mich freuen, wenn ich eine Rückmeldung von 
     - Imperativ & Präsens: "add xy" anstatt "added xy"
     - Kein Punkt "." am Ende der Commit-Nachricht
 
-## ACHTUNG
+## ACHTUNG :exclamation:
 
-NIEMALS ein Repsitory in einem andern Repository verschachteln!
+:exclamation: NIEMALS ein Repsitory in einem andern Repository verschachteln!
 
 ## Lokalen Ordner zu Git-Repository umwandeln
 
@@ -89,6 +89,8 @@ error: failed to push some refs to 'github.com:user/repo.git'
 
 ## Branches
 
+### neuen Branch erstellen und darauf arbeiten
+
 `git switch -c <branchname>` -> erstellt einen Zweig und wechselt gleich zu ihm <br />
 
 `git push -u origin <branchname>` -> pusht die Änderungen und den neuen Branch, danach nur noch folgendes notwendig:
@@ -101,15 +103,32 @@ vor einem push wie gewohnt:
 
 ### Änderungen vom "working" Branch auf den Main Branch pushen
 
+ACHTUNG hiermit "überspringt" man den Schritt des Mergens!
+
 `git push origin working:main`
+
+
+### "Working"-Branch löschen
+
+1. vorher wieder auf den main-Branch wechseln (der aktive Branch kann nicht gelöscht werden)<br />
+`git switch main`
+
+2. Branch löschen
+    - einen lokalen Branch löschen, der bereits gemerged wurde: <br /> 
+        `git branch -d <branchname>`
+    - Branch noch nicht gemerged, soll trotzdem gelöscht werden: <br />
+        `git branch -D <branchname>`
+    - remote Branch löschen: <br />
+        `git push origin --delete <branchname>` oder `git push origin :<branchname>` 
+
+
+Überprüfen der Branches
+
+`git branch -a`
+
+
 
 
 ## Cheatsheet
 
 [Cheatsheet-Link](https://github.com/arslanbilal/git-cheat-sheet/blob/master/other-sheets/git-cheat-sheet-de.md)
-
-
-## Umbenennen von vorh. Repros - Git, -GitHub !?
-### To Do für mich
-
-- KLÄREN: Commit: kann man dann auch, wenn man bei 5 ist auf 3 zurückgreifen, ohne, dass 4 verloren geht? also ok zurück zu 3 oh nee 4 wäre besser gewesen?
