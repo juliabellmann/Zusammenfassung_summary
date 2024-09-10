@@ -58,7 +58,7 @@ Bei Fehlern oder Lücken würde ich mich freuen, wenn ich eine Rückmeldung von 
 1. Im Terminal in den lokalen Ordner gehen, den man zum Repo umwandeln möchte. ACHTUNG: Repos nicht verschachteln! <br />
 `git init` -> Inizialisiert Git
 2. Bereits vorhandene Dateien hinzufügen: <br />
-`git add .` -> add: hinzufügen; ".": alle Dateien
+`git add .` -> add: hinzufügen; ".": alle Dateien von dem Ordner, in dem man sich gerade befindet (inkl. aller enthaltenen Dateien)
 3. Commit erstellen: <br />
 `git commit -m "<Inhalt des Commits>"` -> -m: Nachricht, welche in den Anführungszeichen stehen muss (Regeln hierzu: siehe oben)
 4. Auf GitHUb ein neues Repository erstellen.
