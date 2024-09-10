@@ -89,6 +89,9 @@ Bsp:
 - verwende keine IDs für Styling
 
 
+Es ist möglich, dass ein Element sowohl Klassen als auch eine ID hat.
+
+
 ## BENNENNUNGSREGELN
 
 - verwende beschreibende Namen

@@ -2,7 +2,7 @@
 
 ```css
 
-@charset UFT-8;
+@charset "utf-8";
 
 
 

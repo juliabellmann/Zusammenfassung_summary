@@ -174,7 +174,6 @@ Dies sind keine frei wählbaren Namen, sondern fest vorgegebene Schlüsselwörte
 
 ### verknüpfen
 
-
 ```css
 selector.class {eigenschaft: wert} 
 
@@ -182,6 +181,65 @@ selector .class {eigenschaft: wert}
 
 selector#id {eigenschaft: wert} 
 ```
+
+
+## Bedingte Selektoren 
+
+### child selector (Kind-Selektor)
+
+formatiert die direkten "Kinder" des übergeordneten Parent-Elements
+
+`parent > child { ... }`
+
+... (gibt noch mehr, mache jetzt Feierabend)
+
+## Außenabstände (margin) & Innenabstände (padding)
+
+Magrin (ocker?) ist der Außenabstand. Dieser geht vom Inhalt (blau) des Kontainers nach außen. 
+Padding (lila) ist der Innenabstand. Dieser geht vom Inhalt des Kontainers aus und vergrößert dessen Bereich.
+
+Hilfreich ist es, sich die unterschiedlichen Veränderungen im Browser im Inspektor (Rechtsklick-Untersuchen) anzusehen. 
+
+![alt text](image.png)
+
+
+Beispiel:
+```css
+/* Außenabstände */
+div {
+    margin-top: 0;
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+}
+
+/* Innenabstände */
+div {
+    padding-top: 0;
+    padding-bottom: 0.3rem;
+    padding-left: 0.7rem;
+    padding-right: 1rem;
+}
+```
+Es können auch alle vier Werte, durch Leerzeichen getrennt, in der Eigenschaft margin, bzw. padding angegeben werden: <br />
+`margin: oben rechts unten links;`<br />
+`padding: oben rechts unten links;`
+
+Oder wenn die Werte für den vertikalen und den horizontalen Anstand jeweils gleich sind, können diese auch zusammengefasst werden: <br />
+`margin: vertikal horizontal;`<br />
+`padding: vertikal horizontal;`
+
+
+
+
+
+## Listen einbinden
+
+## Hintergrundbilder
+
+## Bilder einpassen
+
+## Transitions
 
 
 
