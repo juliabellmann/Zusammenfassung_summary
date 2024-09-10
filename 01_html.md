@@ -1,7 +1,7 @@
 # Markdown Notizen zu HTML
 
 Moin, dies sind meine Notizen zu HTML. 
-Bei Fehlern oder Lücken würde ich mich freuen, wenn ich eine Rückmeldung von euch erhalten würde, um dies zu korrigiren.
+Bei Fehlern oder Lücken würde ich mich freuen, wenn ich eine Rückmeldung von euch erhalten würde, um dies zu korrigieren.
 
 ## HTML-TAGS
 
@@ -81,10 +81,11 @@ Bsp:
 ## CLASS
 
 - Klassen können mehrfach verwendet werden
+- Der Name darf keine Leer- oder Sonderzeichen enthalten und nicht mit einer Zahl beginnen
 
 ## ID
 
-- Achtung! Es darf nur eine ID pro HTML-Datei verwendet werden.
+- Achtung! Es darf jede ID nur einmal pro HTML-Datei verwendet werden.
 - verwende keine IDs für Styling
 
 
