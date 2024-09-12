@@ -4,8 +4,6 @@
 
 @charset "utf-8";
 
-
-
 html {
     font-size: 100%;
 }
