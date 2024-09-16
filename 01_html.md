@@ -78,18 +78,21 @@ Bsp:
 <img class="class1 class2" src="Quelle.Bildformat" alt="Bildbeschreibung zB für Screenreader oder falls das Bild nicht dargestellt werden konnte">Inhalt des Containers />
 ```
 
-## CLASS
 
-- Klassen können mehrfach verwendet werden
-- Der Name darf keine Leer- oder Sonderzeichen enthalten und nicht mit einer Zahl beginnen
-
-## ID
-
-- Achtung! Es darf jede ID nur einmal pro HTML-Datei verwendet werden.
-- verwende keine IDs für Styling
-
+## KLASSEN UND IDs
 
 Es ist möglich, dass ein Element sowohl Klassen als auch eine ID hat.
+- Der Name darf keine Leer- oder Sonderzeichen enthalten und nicht mit einer Zahl beginnen
+
+### CLASS
+
+- Klassen können mehrfach verwendet werden
+
+### ID
+
+- Achtung! Es darf jede ID nur einmal pro HTML-Datei verwendet werden.
+- D.h. jede ID darf nur einmal vorkommen (nicht wie klassen, die mehrfach vergeben werden), aber mehrere unterschiedliche IDs sind möglich.
+- verwende keine IDs für Styling
 
 
 ## BENNENNUNGSREGELN
