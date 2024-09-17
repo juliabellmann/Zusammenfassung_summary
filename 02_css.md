@@ -37,7 +37,7 @@ Cascading Style Sheets
 
 - :exclamation: ACHTUNG: Nach charset steht kein Doppelpunkt!
 
-- :exclamation: ACHTUNG: bei mehr als einer CSS-Datei darf diese @-Regel nur in der zuerst referenzierten CSS-Datei stehen, da der Browser alle CSS-Dateien aneinander hängt und zu einer einzigen zusammen fasst
+- :exclamation: ACHTUNG: bei mehr als einer CSS-Datei darf diese @-Regel nur in der zuerst referenzierten CSS-Datei stehen, da der Browser alle CSS-Dateien aneinander hängt und zu einer einzigen zusammenfasst!
 
 
 ## Kommentare

@@ -4,6 +4,11 @@
 
 @charset "utf-8";
 
+* {
+  box-sizing: border-box;
+}
+
+
 html {
     font-size: 100%;
 }
