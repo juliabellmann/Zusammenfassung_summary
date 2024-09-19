@@ -354,7 +354,7 @@ Form-spezifische Attribute
 - autofocus: Setzt den Fokus automatisch auf dieses Element beim Laden der Seite
 
 
-[Link zu Form Elements](https://www.w3schools.com/html/html_form_elements.asp)
+[Link zu Form Elements - w3schools](https://www.w3schools.com/html/html_form_elements.asp)
 
 ## LISTEN
 
