@@ -92,3 +92,6 @@ ___
 
 Underscores
 
+# Hyperlinks
+
+[Text](Url) -> wichtig! kein Leerzeichen zwischen [Text] (Link)

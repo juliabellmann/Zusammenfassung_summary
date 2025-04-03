@@ -13,3 +13,9 @@ Starten im Terminal:
 - Would you like to use Turbopack for `next dev`?  >NO / Yes
 - Would you like to customize the import alias (`@/*` by default)? No / >YES
 - What import alias would you like configured? @/*
+
+
+npm install mongodb
+
+npm i use-local-storage-state
+

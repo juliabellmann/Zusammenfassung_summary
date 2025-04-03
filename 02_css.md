@@ -47,6 +47,8 @@ Cascading Style Sheets
 
 ## Syntax
 
+deklarieren: 
+
 ```css
 selector {
 eigenschaft: wert; 
@@ -241,7 +243,15 @@ Oder wenn die Werte für den vertikalen und den horizontalen Anstand jeweils gle
 
 ## Transitions
 
+## fixed & co
 
+- fixed: der Inhalt "rutscht" hinter dem Objekt, welches das Attribut erhalten hat. Dies ist behebbar z.B. mit dem Padding
+
+dies ist z.B. für Buttons. "nach oben" oder cookies - mind. 1. Offset
+
+- static (default): kein Offset -> Positionsangabe
+
+- absolute orientiert sich an relative
 
 
 ## Browserspezifische Eigenschaften mit Herstellerpräfix
