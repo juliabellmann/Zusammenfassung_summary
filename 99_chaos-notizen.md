@@ -11,7 +11,27 @@ Syntax:
 {Objekt}
 
 
+## Design Regeln
 
+touch-Größe für Buttons: 48*48px
+
+schriftgrößen mind. 16px
+
+serifelos liest sich  besser
+
+font ninja
+
+favicon 16*16pc ico, png, gif svg
+
+Strato -> Webseite!ß
+
+Hostinger - Firmennamengenerator
+
+
+pygame -> python Game
+
+
+JSON für Datenstrukturen
 
 
 ## fat arrow
