@@ -101,9 +101,156 @@ Create a top-level directory called components.
 
 Important: To use CSS Modules, the CSS file name must end with .module.css.
 
+https://nextjs.org/docs/app/getting-started/css
+
+
+## Assets
+
+In der Webentwicklung sind Assets alle Komponenten und Ressourcen, die zusammen eine Website bilden. Dazu gehören statische Dateien wie Bilder, Fonts, CSS-Dateien und Javascripte. Assets sind entscheidend für die Funktionalität, Leistung und das Nutzererlebnis einer Website. 
+
+Static Assets, wie Bilder -> top-lvl Ordner: public
+Verweise wie bei pages
+
+der "public" Ordner ist auch für `robots.txt`, google seiten verification und alle anderen static assets nützlich.
+ https://nextjs.org/docs/app/building-your-application/optimizing/static-assets
+
+
+
+ ## Images
+
+ in HTML wurde <img >-Tag verwendet - Next.js: <Image>
+
+<Image> 
+- lazy load: default
+- autom. Opimierung der Bilder
+
+https://nextjs.org/docs/pages/building-your-application/routing/custom-document
+
+
+
+## CSS Modules
+
+ZUsätzlich zu CSS modulen kann die Next.js Application auf unterschieldiche Weise gestyled werden:
+- Sass - was .css und .scss Dateien erlaubt
+- PostCSS libaries wie Tailwind CSS
+- CSS-in-JS libaries wie styled-jsx, styled-components und emotion
+
+https://github.com/vercel/next.js/tree/canary/examples/with-emotion
+
+
+## Global Styles
+
+The default export of _app.js is a top-level React component that wraps all the pages in your application. You can use this component to keep state when navigating between pages, or to add global styles as we're doing here. Learn more about _app.js file.
+
+https://nextjs.org/docs/pages/building-your-application/routing/custom-app
+
+Important: You need to restart the development server when you add pages/_app.js. 
+
+### Adding global styles
+
+In Next.js, you can add global CSS files by importing them from pages/_app.js. You cannot import global CSS anywhere else.
+
+The reason that global CSS can't be imported outside of pages/_app.js is that global CSS affects all elements on the page.
+
+If you were to navigate from the homepage to the /posts/first-post page, global styles from the homepage would affect /posts/first-post unintentionally.
+
+You can place the global CSS file anywhere and use any name. So let’s do the following:
+
+- Create a top-level styles directory and a global.css file.
+- Add the following CSS inside styles/global.css. This code resets some styles and changes the color of the a tag:
+
+      html,
+      body {
+      padding: 0;
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        Segoe UI,
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        Fira Sans,
+        Droid Sans,
+        Helvetica Neue,
+        sans-serif;
+      line-height: 1.6;
+      font-size: 18px;
+      }
+
+      * {
+      box-sizing: border-box;
+      }
+
+      a {
+      color: #0070f3;
+      text-decoration: none;
+      }
+
+      a:hover {
+      text-decoration: underline;
+      }
+
+      img {
+      max-width: 100%;
+      display: block;
+      }
+
+      Finally, import the CSS file inside the pages/_app.js file you've created earlier on:
+
+      // `pages/_app.js`
+      import '../styles/global.css';
+
+      export default function App({ Component, pageProps }) {
+      return <Component {...pageProps} />;
+      }
+
+Now, if you access http://localhost:3000/posts/first-post
+, you’ll see that the styles are applied. Any styles imported in _app.js will be applied globally, to all pages of the application.
+
+
+
+
+
+## SASS
+
+Before you can use Next.js' built-in Sass support, be sure to install sass
+
+    npm install -D sass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
+Core Web Vitals - Nutzerfreundlichkeit der Webseite
+https://web.dev/articles/vitals?hl=de#core-web-vitals
 
+CLS - Cumulative Layout Shift - unerwartete Layoutveränderungen
+https://web.dev/articles/cls?hl=de
 
 npm install mongodb
 

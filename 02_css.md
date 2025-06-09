@@ -121,6 +121,31 @@ Mehr Spezifikationen, so etwas wie "Großeltern", gibt es nicht.
 
 Man könnte auch spezielle Schriftarten einbinden. Ergänze ich später.
 
+### Schriftgrößen
+
+Für Überschriften werden folgende Schriftgrößen in rem empfohlen:
+
+    h1: 2.4rem - 3.0rem (entspricht etwa 38-48px bei Basis von 16px)
+    h2: 2.0rem - 2.4rem (entspricht etwa 32-38px)
+    h3: 1.5rem - 2.0rem (entspricht etwa 24-32px)
+    h4: 1.2rem - 1.5rem (entspricht etwa 19-24px)
+    h5: 1.0rem - 1.2rem (entspricht etwa 16-19px)
+    h6: 0.8rem - 1.0rem (entspricht etwa 13-16px)
+
+```css
+html {
+    font-size: 16px;
+}
+
+h1 { font-size: 2.4rem; }   /* 38.4px */
+h2 { font-size: 2.0rem; }   /* 32px */
+h3 { font-size: 1.5rem; }   /* 24px */
+h4 { font-size: 1.2rem; }   /* 19.2px */
+h5 { font-size: 1rem; }     /* 16px */
+h6 { font-size: 0.8rem; }   /* 12.8px */
+
+```
+
 ## Maßeiheiten
 
 HINWEIS: Zwischen dem Wert und der Maßangabe darf KEIN Leerzeichen stehen.
