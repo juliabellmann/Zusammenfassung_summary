@@ -90,3 +90,85 @@ cat ~/.ssh/id_ed25519.pub
 2. Klicke New SSH Key
 3. neuen Namen eingeben und Key einfügen
 4. speichern
+
+
+## Supabase - Query zum Table erstellen für das anlegen des Profils
+
+-- Create profiles table and RLS policies for per-user profiles
+BEGIN;
+
+CREATE TABLE IF NOT EXISTS public.profiles (
+  id uuid PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+  company_name text,
+  company_street text,
+  company_house_nr text,
+  company_zip text,
+  company_city text,
+  company_contact_person text,
+  created_at timestamptz DEFAULT now(),
+  updated_at timestamptz DEFAULT now()
+);
+
+-- Trigger to update updated_at
+CREATE OR REPLACE FUNCTION public.set_updated_at()
+RETURNS trigger LANGUAGE plpgsql AS $$
+BEGIN
+  NEW.updated_at = now();
+  RETURN NEW;
+END;
+$$;
+
+DROP TRIGGER IF EXISTS set_updated_at_trigger ON public.profiles;
+CREATE TRIGGER set_updated_at_trigger
+BEFORE UPDATE ON public.profiles
+FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+
+-- Enable RLS and policies
+ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
+
+-- Allow authenticated users to SELECT/UPDATE their own profile
+CREATE POLICY "profiles_owner_select" ON public.profiles
+  FOR SELECT TO authenticated
+  USING (id = (SELECT auth.uid()));
+
+CREATE POLICY "profiles_owner_insert" ON public.profiles
+  FOR INSERT TO authenticated
+  WITH CHECK (id = (SELECT auth.uid()));
+
+CREATE POLICY "profiles_owner_update" ON public.profiles
+  FOR UPDATE TO authenticated
+  USING (id = (SELECT auth.uid()))
+  WITH CHECK (id = (SELECT auth.uid()));
+
+COMMIT;
+
+## Create profiles RLS policies
+
+-- Enable RLS (already enabled but safe to run)
+ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
+
+-- Revoke any broad privileges (defensive)
+REVOKE ALL ON public.profiles FROM PUBLIC;
+
+-- Create SELECT policy for owners
+CREATE POLICY profiles_owner_select ON public.profiles
+  FOR SELECT
+  TO authenticated
+  USING ((id = (SELECT auth.uid())));
+
+-- Create INSERT policy for owners
+CREATE POLICY profiles_owner_insert ON public.profiles
+  FOR INSERT
+  TO authenticated
+  WITH CHECK ((id = (SELECT auth.uid())));
+
+-- Create UPDATE policy for owners
+CREATE POLICY profiles_owner_update ON public.profiles
+  FOR UPDATE
+  TO authenticated
+  USING ((id = (SELECT auth.uid())))
+  WITH CHECK ((id = (SELECT auth.uid())));
+
+-- Optionally allow service_role to bypass (no policy needed for service_role)
+
+-- Validate: simple select count as owner would succeed for rightful user (can't validate here)
